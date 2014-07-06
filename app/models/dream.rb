@@ -21,12 +21,12 @@ class Dream < ActiveRecord::Base
 
     Time.zone = "America/New_York"
 
-    # if (rand <= 0.05) && (Time.now.hour >= 8 || Time.now.hour <= 2)
+    if (rand <= 0.25) && (Time.now.hour >= 8 || Time.now.hour <= 2)
       d = new
       d.content = generate_dream
       client.update(d.to_tweet)
       d.save
-    # end
+    end
 
   end
 
